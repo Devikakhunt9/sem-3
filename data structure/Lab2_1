@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class LAB2_1{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("declare size of array:");
+		int n = s.nextInt();
+		int a[] = new int[n];
+		for (int i = 0;i<n ;i++ ) {
+			System.out.println("Enter element:");
+			a[i] = s.nextInt();
+		}
+		System.out.println("enter no which has been change");
+		int x = s.nextInt();
+		System.out.println("enter update value:");
+		int y = s.nextInt();
+		int flag = 0;
+		for (int i = 0;i<n ;i++ ) {
+			if (a[i] == x) {
+				a[i] = y;
+				System.out.println("index of value:"+i);
+				flag = 1;
+			}			
+		}
+		if (flag == 0) {
+			System.out.println("enter value is not an array.please enter valid value....");
+		}
+		else{
+			System.out.println("updated array:");
+			for(int i = 0;i < n;i++){
+			System.out.println(a[i]);
+			}
+		}
+	}
+}

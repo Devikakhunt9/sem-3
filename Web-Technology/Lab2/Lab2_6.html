@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GCD -JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = parseInt(prompt("Enter No:"));
+		var b = parseInt(prompt("Enter No:"));
+		var gcd = 1,temp ;
+		while(b != 0 ){
+			temp = b;
+			b = a % b;
+			a = temp;
+		}
+		gcd = a;
+		document.write(gcd);
+	</script>
+</body>
+</html>

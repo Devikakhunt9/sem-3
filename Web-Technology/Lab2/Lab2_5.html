@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Armstrong -JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var n = prompt("Enter No:");
+		var pow = n.length;
+		var temp = parseInt(n);
+		var sum = 0;
+		for(var i = 0;i<=pow;i++){
+			if(n>0){
+				sum += parseInt(n%10)**pow;
+				n = parseInt(n/10);
+				// console.log(sum,pow);
+			}
+		}
+		if (sum == temp) {
+			document.write("Armstrong");
+		}
+		else{
+			document.write("Not Armstrong");
+		}
+	</script>
+</body>
+</html>

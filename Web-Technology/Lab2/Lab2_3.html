@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>print prime btw 2 no</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = parseInt(prompt("Enter first no"));
+		var b = parseInt(prompt("enter second no:"));
+		var flag = false;
+		while(a<b){
+			a++;
+			for(var i = 2;i<a;i++){
+				if (a%i == 0) {
+					a++;
+					flag = true;
+					break;
+				}
+			}
+			
+			if(flag == false){
+				document.write(a);
+			}
+			
+		}
+	</script>
+</body>
+</html>

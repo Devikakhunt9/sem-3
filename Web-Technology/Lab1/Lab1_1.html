@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		Hello
+		<script type="text/javascript">
+			name1 = "Devika";
+			name = "this page allows cookies";
+			document.write(name1);
+			console.log("abc");
+			alert(name);
+
+//-----------------------------calculator------------------------------------------
+
+		a = parseInt(prompt("Enter the no:"));
+		b = parseInt(prompt("Enter the no:"));
+		op = prompt("enter opration");
+
+		if (op=="add") {
+			document.write("\n"+(a+b));
+		}
+		else if (op=="sub") {
+			document.write(a-b);
+		}
+		else if (op=="mul") {
+			document.write(a*b);
+		}
+		else if (op=="div") {
+			if (b!=0) {
+			document.write(a+b);
+			}
+			else{
+				document.write("not divede by zero:");
+			}		
+		}
+		else{
+			document.write("PLEASE enter valid opration...");
+		}
+		</script>
+</body>
+</html>

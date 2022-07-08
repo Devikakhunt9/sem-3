@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timer -JS</title>
+</head>
+<body>
+	<input type="text" id="setTime">
+	<h1 id = "Timer">
+		ANS
+	</h1>
+	<input type="button"  value = "start" id ="startTime" onclick="startTime()">
+	<script type="text/javascript">
+		var a = document.getElementById("setTime");
+		console.log(a.value);
+		//console.log(temp);
+		var t = document.getElementById("Timer");
+		console.log(t.innerHTML);
+		var c;
+
+		function startTime(){
+			c = setInterval(Timer ,10);
+		}
+			
+		function Timer(){
+			
+		t.innerHTML = a.value;
+			if(a.value>0){
+			console.log(a.value);
+			a.value--;
+			t.innerHTML = a.value/100;
+			console.log(t.innerHTML);
+		}
+			
+			else{
+				clearInterval(c);
+				setTimeout(displayImg);
+			}
+		}
+
+		function displayImg(){
+			//img of the time's Up...
+			document.write("Times Up...!!");
+		}
+	</script>
+
+</body>
+</html>

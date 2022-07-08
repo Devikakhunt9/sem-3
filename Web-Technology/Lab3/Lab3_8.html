@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Using Function</title>
+</head>
+<body>
+	<script type="text/javascript">
+		prime();
+	function prime(){
+		flag = true
+		var n = parseInt(prompt("Enter NO:"));
+		for(var i = 2;i<n/2;i++){
+			if (n%i == 0 ) {
+				flag = false;
+				break;
+			}
+		}
+			if (flag == true) {
+				document.write("Prime");
+			}
+			else{
+				document.write("Not Prime");
+			}
+
+	} 
+	</script>
+</body>
+</html>

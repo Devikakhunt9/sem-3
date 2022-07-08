@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Split a word and find of its index</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str = prompt("Enter String");
+		var word = prompt("Enter Word:");
+		var c = str.split(" ");
+		console.log(c);
+		for(var i = 0;i<c.length;i++){
+			if (c[i] == word ) {
+				document.write("index:"+i+"<br>");
+			}
+		}
+	</script>
+</body>
+</html>

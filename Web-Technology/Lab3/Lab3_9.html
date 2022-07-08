@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Max in ARRAY</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var max = 0;
+		var  n = parseInt(prompt("Enter the size of an array:"));
+		var arr = new Array(n);
+		for(var i = 0;i<n;i++){
+			arr[i] = parseInt(prompt("Enter Element:"));
+			document.write(arr[i]+"<br>");
+			if(max<arr[i]){
+				max = arr[i];
+			}
+		} 
+		document.write("Max Is :"+max);
+	</script>
+</body>
+</html>

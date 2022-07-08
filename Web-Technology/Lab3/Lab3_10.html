@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArrayMethods</title>
+</head>
+
+<body>
+    <script>
+        let a = [1, 2, 3, 4.2, "Devika", "Khunt", true, false];
+        document.write("array1 : " +"&nbsp"+ a + "<br/>"+ "<br/>");
+
+        a.push(3);
+        document.write("push : " + a + "<br/>"+ "<br/>");
+        
+        a.pop();
+        document.write("pop : " + a + "<br/>"+ "<br/>");
+        
+        a.shift();
+        document.write("shift : " + a + "<br/>"+ "<br/>");
+        
+        a.unshift("1st");
+        document.write("unshift : " + a + "<br/>"+ "<br/>");
+
+        document.write("length : " + a.length + "<br/>"+ "<br/>");
+
+        let b = ["a", "b", 1, 2, 3, true, "lastElement"];
+        document.write("concat : " + a.concat(b) + "<br/>"+ "<br/>");
+
+        a.splice(3, 0, "Devika", "Khunt");
+        document.write(" splice  ( index, deleteCount, element1, element2,..) : " + a + "<br/>"+ "<br/>" );
+
+        document.write("slice : " + a.slice(1, 5) + "<br/>"+ "<br/>");
+
+        a.reverse();
+        document.write("reverse : " + a + "<br/>"+ "<br/>");
+
+        document.write("copyWithin( target , start, end)  : " + a.copyWithin(5, 2, 4) + "<br/>"+ "<br/>");
+       
+        a.sort();
+        document.write("sort : " + a + "<br/>"+ "<br/>");
+
+        a.fill(true, 5, 8);
+        document.write("fill(value,start,end)  : " + a + "<br/>"+ "<br/>");
+
+        document.write("lastTndexOf  : " + a.lastIndexOf(true) + "<br/>"+ "<br/>");
+
+        document.write("indexOf  : " + a.indexOf(true) + "<br/>"+ "<br/>");
+
+        document.write("includes  : " + a.includes(2) + "<br/>"+ "<br/>");
+    </script>
+</body>
+
+</html>

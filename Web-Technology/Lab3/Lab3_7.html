@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>aaraay asending order</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var n = parseInt(prompt("Enter no of input:"));
+		var array = new Array();
+		for(var i = 0;i<n;i++){
+			array[i] = parseInt(prompt("Enter no:"));
+			console.log(array[i]);
+		}
+
+		for(var i = 0;i<n-1;i++){
+			for(var j = i+1;j<n;j++){
+				if(array[i]>array[j]){
+					var temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+
+		for(var i = 0;i<n;i++){
+			console.log(array[i]);
+			document.write(array[i]+"<br>");
+		}
+
+	</script>
+</body>
+</html>

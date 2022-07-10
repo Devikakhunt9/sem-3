@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>StopWatch - JS</title>
+	<link rel="stylesheet" type="text/css" href="DigitalWatch.css">
+	<script type="text/javascript" src="DigitalWatch.js"></script>
+</head>
+<body>
+
+	<div id = "minute">
+		minute
+	</div>
+	<div>
+		:
+	</div>
+	<div id = "second">
+		second
+	</div>
+	<br><br>
+	<button id = "start" onclick="start()">
+		Start
+	</button>
+	<button id = "stop" onclick="stop()">
+		Stop
+	</button>
+	<button id = "lap" onclick="lap()">
+		Lap
+	</button>
+	<button id = "reset" onclick="MyReset()">
+		Reset
+	</button>
+	
+	<h3>
+		1
+	</h3>
+
+	<h3>
+		2
+	</h3>
+	<h3>
+		3
+	</h3>
+	<h3>
+		4
+	</h3>
+	<h3>
+		5
+	</h3>
+	<h3>
+		6
+	</h3>
+	<h3>
+		7
+	</h3>
+	<h3>
+		8
+	</h3>
+	<h3>
+		9
+	</h3>
+	<h3>
+		10
+	</h3>
+	<script type="text/javascript">
+		var m = document.getElementById("minute");
+		m.innerHTML = "00";
+		var s = document.getElementById("second");
+		s.innerHTML = "00.00";
+		var l = document.getElementsByTagName('h3');
+		var sr = document.getElementById("start");
+	
+		var stresum = document.getElementById("stop");
+
+		var st,a = 0,b = 0,i = 0,flag = 0;
+
+		function start(){
+			flag = 0;
+			if(flag == 0){
+				srt = "Resume";
+				flag =1;
+			}
+			sr.innerHTML = srt;
+			console.log(srt);
+			st = setInterval(Timer,10);
+		}
+
+		function Timer(){
+			if(a<6000){
+				a++;
+				if(s.innerHTML<=9.99){
+					console.log(s.innerHTML);
+					s.innerHTML = "0" + a/100;
+				}
+				else{
+					s.innerHTML = a/100;
+					console.log(s.innerHTML);
+				}
+			}
+			else if(b<60){
+				b++;
+				if(m.innerHTML<9){
+					m.innerHTML = "0" + b;
+				}
+				else{
+					m.innerHTML = b;
+				}
+				console.log(m.innerHTML);
+				a = 0;
+			}
+		}
+
+		function stop() {
+			clearInterval(st);
+		}
+
+		function MyReset(){
+			clearInterval(st);
+			a = 0;
+			b = 0;
+			s.innerHTML = "00.00";
+			m.innerHTML = "00";
+			srt = "Start";
+			sr.innerHTML = srt;
+			for(var i = 0;i<10;i++){
+				l[i].innerHTML = i+1;
+			}
+			i = 0;
+		}
+
+		var	i = 0;
+		function lap(){
+			if (flag == 1) {
+				i = 0;
+				flag = 0;
+			}
+			if (i<10) {
+				l[i].innerHTML = m.innerHTML + ":" + s.innerHTML;
+				flag == 1;
+			}
+			i++;
+		}
+		
+	</script>
+</body>
+</html>

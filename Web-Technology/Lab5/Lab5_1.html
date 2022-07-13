@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attandance - JS</title>
+	<style type="text/css">
+		div{
+			height: 30vh;
+		    width: 55%;
+		    position: relative;
+		    top: 32vh;
+		    left: 20%;
+		    position: fixed;
+		    border: 2px solid red;
+		    font-size: 2em;
+		    /*background-color: green;*/
+		}
+		button{
+			background: #a087de;
+			border: 1PX solid green;
+			border-radius: 20px;
+			margin: 30px;
+			padding: 20px;
+			font-size: 1.5em;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		ans
+	</div>
+	<button onclick="check()">CheckAll</button>
+	<button onclick="uncheck()">UnCheckAll</button>
+	<br>
+	<!-- <input type='checkbox' value='"+i+"' name=""> -->
+	<script type="text/javascript">
+		for(var i = 101;i<165;i++){
+			document.write("<input type='checkbox' value='"+i+"' name='' onclick='absentPresent()'>"+i+"<br>");
+		}
+		for(var i = 201;i<285;i++){
+			document.write("<input type='checkbox' value='"+i+"' name='' onclick='absentPresent()'>"+i+"<br>");
+		}
+		for(var i = 301;i<365;i++){
+			document.write("<input type='checkbox' value='"+i+"' name='' onclick='absentPresent()'>"+i+"<br>");
+		}
+
+		var ca = document.getElementsByTagName('input');
+		var ap = document.getElementById('div1');
+		var array = new Array();
+		// console.log(ap);
+		function check(){
+			for(var i = 0;i<ca.length;i++){
+				ca[i].checked = true;
+			}
+		}
+
+		function uncheck(){
+			for(var i = 0;i<ca.length;i++){
+				ca[i].checked = false;
+			}
+		}
+
+		function absentPresent(){
+			var str = "";
+			for(var i = 0;i<ca.length;i++){
+				if (ca[i].checked == false) {
+					array[i] =  ca[i].value;
+					str += ca[i].value +", ";
+				}
+				ap.innerHTML = str.substr(0,str.length-2);
+			}
+		}
+	</script>
+</body>
+</html>

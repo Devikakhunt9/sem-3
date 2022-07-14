@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		GUI - Calculator - JS
+	</title>
+	<link rel="stylesheet" type="text/css" href="Calculator.css">
+</head>
+<body>
+	<table border=" 1" align="center">
+		<tr>
+			<td colspan="4">
+				<input type="text" id="displayBox">
+			</td>
+		</tr>
+		<tr>
+			<td id = "resetAll" onclick="resetAll()">CE/AC</td>
+			<td id = "sqrt" onclick="clickop(this)"><big>2</big><sup><small>1/2</small></sup></td>
+			<td id = "sqr" onclick="clickop(this)">x<sup><small>2</small></sup></td>
+			<td onclick="clickop(this)"><sup>1</sup><small>/x</small></td>
+		</tr>
+		<tr>
+			<td onclick="clickop(this)">%</td>
+			<td id = "clear" onclick="myClear()">C</td>
+			<td id = "removeOne" onclick="removeOne()"><-</td>
+			<td  id=""  onclick="clickop(this)">/</td>
+		</tr>
+		<tr>
+			<td id=" " onclick="clickbtn(this)">7</td>
+			<td id=" " onclick="clickbtn(this)">8</td>
+			<td id=" " onclick="clickbtn(this)">9</td>
+			<td id ="" onclick="clickop(this)">x</td>
+		</tr>
+		<tr>
+			<td id=" " onclick="clickbtn(this)">4</td>
+			<td id=" " onclick="clickbtn(this)">5</td>
+			<td id=" " onclick="clickbtn(this)">6</td>
+			<td id="" onclick="clickop(this)">-</td>
+		</tr>
+		<tr>
+			<td id=" " onclick="clickbtn(this)">1</td>
+			<td id=" " onclick="clickbtn(this)">2</td>
+			<td id=" " onclick="clickbtn(this)">3</td>
+			<td id="" onclick="clickop(this)">+</td>
+		</tr>
+		<tr>
+			<td onclick="clickop(this)">+/-</td>
+			<td id=" " onclick="clickbtn(this)">0</td>
+			<td id=" " onclick="clickbtn(this)">.</td>
+			<td id=" " onclick="ansop(this)">=</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		
+		var dt = document.getElementById("displayBox");
+		var clr = document.getElementById("clear");
+		var nv=0;
+		var b = "";
+		var ans = parseFloat();
+		
+		function myClear() {
+			dt.value ="" ;
+		}
+		
+		function removeOne() {
+			var l = dt.value.length;
+			dt.value = dt.value.substring(0,l-1);
+		}
+
+		function resetAll(){
+			dt.value = "";
+			nv = "";
+			c = "";
+			op = "";
+			ans = "";
+			clr = "";
+			b = "";
+			console.log(dt.value,nv,c,op,ans,clr,b);
+		}
+
+		function clickop(op){
+			oldvalue = dt.value;
+			b = op.innerHTML;
+			dt.value = "";
+		}
+
+		function ansop(){
+				console.log(oldvalue , b,nv);
+			if(b == "+"){
+				ans = parseFloat(oldvalue) + parseFloat(nv);
+			}
+			else if(b == "-"){
+				ans = parseFloat(oldvalue) - parseFloat(nv);
+			}
+			else if(b == "x"){
+				ans = parseFloat(oldvalue) * parseFloat(nv);
+			}
+			else if(b == "/"){
+				if (nv != 0) {
+				ans = parseFloat(oldvalue) / parseFloat(nv);
+				}
+				else{
+					ans = "syntax error";
+				}
+			}
+			else if( b == "%"){
+				ans = parseFloat(oldvalue) /100;
+			}
+			else if( b == "+/-"){
+				ans = parseFloat(oldvalue) *(-1);
+			}
+			else if (b == "<big>2</big><sup><small>1/2</small></sup>"){
+				// x^1/2
+				ans = Math.sqrt(oldvalue);
+			}
+			else if(b == "x<sup><small>2</small></sup>"){
+				// x2
+				ans = oldvalue**2;
+			}
+			else if(b == "<sup>1</sup><small>/x</small>"){
+				// 1/x
+				ans = 1/oldvalue;
+			}
+			dt.value = ans;
+			console.log(ans);
+		}
+
+		function clickbtn(n){
+		c = n.innerHTML;
+		dt.value += c;
+		nv=dt.value;
+
+		}
+	</script>
+</body>
+</html>

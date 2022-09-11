@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snack - Game</title>
+	<link rel="stylesheet" type="text/css" href="SnackGame.css">
+</head>
+<body onkeydown="keyEvent(event)" id="mybody" >
+	<div id = "canvas" onclick="myLoad()">
+		<div id="food">
+			
+		</div>
+		<img src="giphy.gif" id = "img">
+	</div>
+	<div id = "btn">
+		<button id = "left" onclick="snakeLeft()"><</button>
+		<button id = "up" onclick="snakeUp()">^</button>
+		<button id = "down" onclick="snakeDown()">v</button>
+		<button id = "right" onclick="snakeRight()">></button>
+
+		<div id = "score">
+			Score :
+			<br>
+			<span id = "scorecount">
+				0
+			</span>
+		</div>
+		<div id = "Life">
+			Life :
+			<br>
+			<span id="lifeCount">
+				
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript" src="index.js">
+	</script>
+
+</body>
+</html>
